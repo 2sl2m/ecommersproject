@@ -1,0 +1,35 @@
+<div *ngIf="isloading" class="loading position-fixed start-0 end-0 top-0 bottom-0 d-flex justify-content-center align-items-center">
+    <h2 class="loader"></h2>
+</div>
+
+
+
+<div class="container  w-75">
+  <div class="row d-flex align-items-center">
+    <div class="col-md-4">
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let imgSrc of productItem.images">
+              <ng-template carouselSlide [id]="productItem?.id">
+                <img [src]="imgSrc" [alt]="productItem.name">
+              </ng-template>
+            </ng-container>
+        
+          </owl-carousel-o>    </div>
+    <div class="col-md-8">
+        <h2>{{productItem.title}}</h2>
+        <h4>{{productItem.description}}</h4>
+        <span>{{productItem.category.name}}</span>
+        <div class="div  d-flex justify-content-between py-2">
+            <span>{{productItem.price}}EGP</span>
+            <span>
+             <i class="fa fa-star rating-color "></i>
+           {{  productItem.ratingsAverage}}
+            </span>
+         </div>
+         <button (click)="getproductcart(productItem?.id)" class="btn bg-main text-white w-100">+ Add</button>
+
+    </div>
+</div>
+
+
+</div>

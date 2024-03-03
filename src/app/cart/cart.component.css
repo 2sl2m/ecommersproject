@@ -1,0 +1,55 @@
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #2bac11;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+    -webkit-animation: animloader 1s linear infinite alternate;
+}
+.loading{
+  background-color: rgb(102, 102, 102);
+  z-index: 54254;
+} 
+  @keyframes animloader {
+    0% {
+      box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+    }
+    33% {
+      box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+    }
+    66% {
+      box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+    }
+    100% {
+      box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+    }
+  }
+
+
+.Item{
+    margin-top: 100px;
+}
+
+.alert{
+    margin-top: 75px;
+}
+.col-md-10 {
+  font-size: 10px;
+
+}
+
+.color{
+  color: #2bac11;
+}
+
+.container{
+  margin-top: 100px;
+}
+
+.Item p span{
+  color: black;
+}

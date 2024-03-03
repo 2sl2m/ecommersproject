@@ -1,0 +1,24 @@
+.password{
+    font-size: 12px;
+    transition: color 0.5s;
+}
+
+.password:hover{
+    color: var(--main-color);
+}
+
+.login{
+    margin-top: 100px;
+}
+.container{
+    width: 80%;
+}
+
+.login h2{
+ font-weight: bolder;
+ font-size: 20PX;
+}
+
+label{
+    font-size: 10px;
+}

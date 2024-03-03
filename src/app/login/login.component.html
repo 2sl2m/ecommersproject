@@ -1,0 +1,45 @@
+
+
+<div class="container">
+
+    <div class="login">
+        <h2>login new :</h2>
+        <div *ngIf="apiError" class=" alert alert-danger">
+            {{apiError}}
+        </div>
+        <form [formGroup]="logInform"   (ngSubmit)="submitlogIn(logInform)">
+            <div class="mt-2">
+                <label>Email :</label>
+                <input type="email" formControlName="email" class="form-control  p-0">
+                <div  *ngIf="logInform.get('email')?.touched && logInform.get('email')?.errors" class="alert alert-danger p-0 mt-2">
+                    <p *ngIf="logInform.get('email')?.errors?.['required']" class="m-0 p-1">email is required</p>
+                    <p *ngIf="logInform.get('email')?.errors?.['email']" class="m-0 p-1">enter valied email</p>
+                </div>
+            </div>
+            <div class="mt-2">
+                <label>Password :</label>
+                <input type="password" formControlName="password" class="form-control p-0">
+                <div  *ngIf="logInform.get('password')?.touched && logInform.get('password')?.errors" class="alert alert-danger p-0 mt-2">
+                    <p *ngIf="logInform.get('password')?.errors?.['required']" class="m-0 p-1">password is required</p>
+                    <p *ngIf="logInform.get('password')?.errors?.['pattern']" class="m-0 p-1">password must contain the first capital letter, then any number or any letter. minLength is 6, and maxLength is 20.</p>
+                </div>
+            </div>
+            
+    
+            <div class="d-flex justify-content-between align-items-center">
+                    <a routerLink="/forgetpassword" class="password cursor-pointer p-0 fw-bolder">Forget Your Password ?</a>
+            
+                    <button [disabled]="logInform.invalid" class="bg-main btn text-white mt-1  ms-auto d-block">
+                        <span *ngIf="!isloading" class="cursor-pointer  m-0 p-0">LogIn</span>
+                        <i *ngIf="isloading" class="fa fa-spinner fa-spin"></i>
+                        </button>
+    
+            </div>
+      
+    
+        </form>
+    </div>
+    
+
+
+</div>

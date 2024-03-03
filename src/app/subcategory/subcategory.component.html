@@ -1,0 +1,20 @@
+
+
+
+
+<div *ngIf="isloading" class="loading position-fixed start-0 end-0 top-0 bottom-0 d-flex justify-content-center align-items-center">
+    <span class="loader"></span>
+</div>
+<div class="container">
+
+    <div class="row mt-5">
+      <div class="col-md-4" *ngFor="let category of subcategoryList">
+    <div class="subcategory mt-3 mb-3">
+        <h3 class="text-center">{{category.name}}</h3>
+
+    </div>
+          </div>
+      </div>
+  </div> 
+     
+

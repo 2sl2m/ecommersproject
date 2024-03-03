@@ -1,0 +1,46 @@
+.wish{
+    margin-top: 100px;
+    background-color: rgb(251, 252, 253);
+}
+
+.wish h2{
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+.row p{
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #2bac11;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+  }
+  .loading{
+    background-color: rgb(102, 102, 102);
+    z-index: 54254;
+  }
+  @keyframes animloader {
+    0% {
+      box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+    }
+    33% {
+      box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+    }
+    66% {
+      box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+    }
+    100% {
+      box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+    }
+  }

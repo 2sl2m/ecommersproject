@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg  fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="home">
+        <img src="assets/images/freshcart-logo.svg" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="home"  [routerLinkActive]="['bg-main','text-white']">Home</a>
+          </li>
+        
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="categories"  [routerLinkActive]="['bg-main','text-white']">Categories</a>
+          </li>
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="brands" [routerLinkActive]="['bg-main','text-white']">Brands</a>
+          </li>
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="productes"   [routerLinkActive]="['bg-main','text-white']">Productes</a>
+          </li>
+
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="/wishList" [routerLinkActive]="['bg-main','text-white']">wish list</a>
+          </li> 
+          
+          <li *ngIf="islogin" class="nav-item">
+            <a class="nav-link" routerLink="cart" [routerLinkActive]="['bg-main','text-white']">Cart</a>
+          </li> 
+      
+  </ul>
+
+  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <li class="nav-item d-flex   align-items-center">
+  <a  href="https://www.facebook.com/groups/route.web.course.cycel42/permalink/351765764199866/?mibextid=Nif5oz"  class="pe-3" ><i class="fa fa-brands fa-facebook"> </i></a>
+  <a href="https://www.tiktok.com/ar/"class="pe-3"><i  class="fa fa-brands fa-tiktok   "> </i></a>
+  <a href="https://www.instagram.com/?hl=ar" class="pe-3"><i  class="fa fa-brands fa-instagram"></i></a>
+  <a href="https://www.youtube.com/" class="pe-3"><i  class="fa fa-brands fa-youtube"> </i></a>
+  <a href="https://www.linkedin.com/feed/" class="pe-3"><i   class="fa fa-brands fa-linkedin"></i></a>
+  <a href="https://twitter.com/?lang=ar" class="pe-3"><i  class="fa fa-brands fa-twitter"></i></a>
+    </li>
+    <li *ngIf="!islogin" class="nav-item">
+      <a class="nav-link" routerLink="register"  [routerLinkActive]="['bg-main','text-white']">Register</a>
+    </li>
+    <li *ngIf="!islogin" class="nav-item">
+      <a class="nav-link" routerLink="login"  [routerLinkActive]="['bg-main','text-white']">logIn</a>
+    </li>
+    <li  (click)="_AuthService.logOut()" *ngIf="islogin" class="nav-item">
+      <a class="nav-link mt-2" routerLink="logout"  [routerLinkActive]="['bg-main','text-white']">logOut</a>
+    </li> 
+
+    <li class="nav-item d-flex align-items-center">
+      <div>
+        <a routerLink="cart" class="nav-link position-relative"  >
+          <i class="fa fa-cart-shopping text-main cursor-pointer p-2"></i>
+          <span class="badge bg-main position-absolute top-0 end-0  rounded-circle">{{numOfcartItems}}</span>
+        </a>
+      </div>
+     
+    </li> 
+    
+    
+</ul>
+      </div>
+    </div>
+  </nav>

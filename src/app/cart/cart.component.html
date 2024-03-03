@@ -1,0 +1,53 @@
+
+<div *ngIf="isloading" class="loading position-fixed start-0 end-0 top-0 bottom-0 d-flex justify-content-center align-items-center">
+    <span class="loader"></span>
+  </div>
+
+<div *ngIf="cartmessage && productList.length===0" class="alert alert-danger text-center">
+<p>{{cartmessage}}</p>
+</div>
+
+
+<div class="container w-75"  >
+    <div *ngIf="!cartmessage && productList.length>0" >
+
+
+        <div class="d-flex justify-content-between">
+        <h3>Cart Shop</h3>
+        <button   [routerLink]="['/shippaddress',cartId]"  class="btn btn-primary ms-auto d-block text-white">check out</button>
+        </div>
+
+        <div class="Item d-flex justify-content-between" >
+            <p class="text-main"> <span class="fw-bolder">Total price </span>: {{TotalCartPrice}}</p>
+            <p  class="text-main "> <span class="fw-bolder">Total Number Of Item </span> : {{numOfCartItems}}</p>
+
+        </div>
+        
+        <div *ngFor="let productItem of productList" class="row shadow-sm mb-3">
+            <div class="col-md-2">
+                <img [src]="productItem.product.imageCover" class="w-100" alt="">
+            </div>
+            <div class="col-md-10 d-flex justify-content-between">
+                <div>
+                    <h4>{{productItem.product.title.split(" ").splice(0,3).join(" ")}}</h4>
+                    <p class="color">{{productItem.price}} EGP</p>
+                    <span (click)="removeCartfromId(productItem.product.id)" class="text-danger cursor-pointer">remove <i class="fa fa-trash"></i></span>
+                </div>
+        
+        
+        
+                <div>
+                    <button (click)="updateCartQuantity(productItem.product.id,productItem.count+1)" class="btn btn-outline-success text-danger">+</button>
+                    <span class="p-3">{{productItem.count}}</span>
+                    <button (click)="updateCartQuantity(productItem.product.id,productItem.count-1)"  class="btn btn-outline-success text-danger">-</button>
+                </div>
+            </div>
+        </div>
+        <button  (click)=" DeleteCartQuantity()" class="btn btn-outline-success mb-3 m-auto d-block">Clear Cart</button>
+
+    </div>
+
+
+
+</div>
+

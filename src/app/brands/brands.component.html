@@ -1,0 +1,24 @@
+
+
+
+<div *ngIf="isloading" class="loading position-fixed start-0 end-0 top-0 bottom-0 d-flex justify-content-center align-items-center">
+    <span class="loader"></span>
+</div>
+
+
+<div class="container w-75">
+    <h2 class="text-main mt-5 mb-3 text-center fw-bolder">All Brands</h2>
+    
+    <div class="row mt-5   cursor-pointer ">
+        <div  class="col-md-3  g-3"   *ngFor="let brand of BrandList">
+            <div  [routerLink]="['/brandesdetails',brand._id]" class="brands ">
+                <img src="{{brand.image}}" class="image w-100" alt="">
+                <h6 class="text-center text-black mt-4">{{brand.name}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,29 @@
+
+
+<div class="container w-75">
+
+    <div class="shipping  pt-3">
+        <form  [formGroup]="shippingAddress"  (ngSubmit)="submitshippingAddress(shippingAddress)">
+        
+             <div  class="mb-3">
+                <label>Details</label>
+                <input type="text" formControlName="details" class="form-control p-0">
+            </div>
+            <div  class="mb-3">
+                <label>phone</label>
+                <input type="tel" formControlName="phone" class="form-control p-0">
+            </div>
+            <div  class="mb-3">
+                <label>City</label>
+                <input type="text" formControlName="city" class="form-control p-0">
+            </div>
+            <button _ngcontent-ung-c15="" class="btn btn-outline-info w-100 my-5 p-0">Pay now</button>
+        </form>
+ 
+    </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,67 @@
+img{
+    height: 300px;
+    width: 100px;
+    margin-top: 50px;
+}
+
+.loading{
+  background-color: rgb(102, 102, 102);
+  z-index: 54254;
+}
+
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #2bac11;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+    -webkit-animation: animloader 1s linear infinite alternate;
+}
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+    }
+    33% {
+      box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+    }
+    66% {
+      box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+    }
+    100% {
+      box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+    }
+  }
+
+
+  .product{
+   border: 1px solid rgb(146, 144, 144);
+   border-radius: 5px;
+}
+
+.container{
+    width: 80%;
+    margin-top: 50px;
+  } 
+
+  .col-md-4{
+    margin-bottom: 20px;
+  } 
+
+  .row{
+    margin-top: 100px;
+  }
+
+  .row h3{
+    height: 40px;
+    color: #20840c;
+    font-weight: bolder;
+    font-size:20px;
+    text-align: center;
+    margin-top: 12px;
+
+  }
